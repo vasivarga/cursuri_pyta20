@@ -61,4 +61,19 @@ Practic, in testare automata, un assert este cel care decide daca testul e "trec
 
 print("Am trecut de assert")
 time.sleep(5)
+
+# driver.find_element(By.LINK_TEXT, "Dropdown")
+# driver.find_element(By.LINK_TEXT, "Form Authentication")
+# driver.find_element(By.LINK_TEXT, "Shadow DOM")
+#
+# driver.find_element(By.PARTIAL_LINK_TEXT, "Notifica")
+#
+# driver.find_element(By.NAME, "login")
+# driver.find_element(By.NAME, "username")
+# driver.find_element(By.NAME, "password")
+#
+# driver.find_element(By.TAG_NAME, "button")
+
 driver.quit()
+
+
