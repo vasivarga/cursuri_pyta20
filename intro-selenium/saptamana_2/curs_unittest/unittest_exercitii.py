@@ -68,6 +68,19 @@ class LoginTests(unittest.TestCase):
 
         assert self.is_absent((By.ID, "flash"))
 
+    def test_successful_login(self):
+        self.driver.find_element(By.ID, "username").send_keys("tomsmith")
+        self.driver.find_element(By.ID, "password").send_keys("SuperSecretPassword!")
+        self.driver.find_element(By.CLASS_NAME, "radius").click()
+
+        success_message = self.driver.find_element(By.CLASS_NAME, "success")
+
+        # assert success_message.is_displayed()
+        # assert "You logged into a secure area!" in success_message.text
+
+        self.assertTrue(success_message.is_displayed())
+        self.assertIn("You logged into a secure area!", success_message.text)
+
 
     def is_absent(self, locator) -> bool:
         lista_elemente = self.driver.find_elements(*locator)
@@ -78,4 +91,6 @@ class LoginTests(unittest.TestCase):
             return False
         else:
             return True
+
+
 
