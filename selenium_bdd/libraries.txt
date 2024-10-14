@@ -1,0 +1,12 @@
+Librarii:
+selenium
+behave
+behave-html-formatter
+
+Plugins:
+Gherkin
+Cucumber+
+ini
+
+Comanda teste:
+behave -f=html -o=raport2.html -t=debug,tag2
