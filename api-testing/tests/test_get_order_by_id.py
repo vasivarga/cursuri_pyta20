@@ -1,9 +1,7 @@
-import unittest
-
 from requests_folder.books_api import submit_order, get_order_by_id
 
 
-class TestGetOrder(unittest.TestCase):
+class TestGetOrder:
 
     def test_get_order_by_valid_id(self):
 

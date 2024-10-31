@@ -1,9 +1,7 @@
-import unittest
-
 from requests_folder.books_api import get_api_status
 
 
-class TestApiStatus(unittest.TestCase):
+class TestApiStatus:
 
     def test_api_status(self):
         response = get_api_status()

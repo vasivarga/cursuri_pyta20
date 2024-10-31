@@ -1,10 +1,9 @@
 import random
-import unittest
 
 from requests_folder.books_api import get_book_by_id
 
 
-class TestGetASingleBook(unittest.TestCase):
+class TestGetASingleBook:
 
     def test_get_book_by_id(self):
         book_to_get = random.randint(1, 6)

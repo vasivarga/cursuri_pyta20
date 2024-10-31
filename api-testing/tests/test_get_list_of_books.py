@@ -1,10 +1,11 @@
-import unittest
+import pytest
 
 from requests_folder.books_api import get_list_of_books
 
 
-class TestGetListOfBooks(unittest.TestCase):
+class TestGetListOfBooks:
 
+    @pytest.mark.tags("smoke", "regression")
     def test_get_list_of_books_no_params(self):
         response = get_list_of_books()
 
@@ -22,6 +23,7 @@ class TestGetListOfBooks(unittest.TestCase):
 
         assert len(response_body) == 6, "Unexpected number of results"
 
+    @pytest.mark.tags("smoke")
     def test_get_list_of_books_filter_by_type(self):
         response = get_list_of_books(book_type="fiction")
         assert response.status_code == 200, "Unexpected status code"
@@ -32,6 +34,7 @@ class TestGetListOfBooks(unittest.TestCase):
             print(book['name'])
             assert book['type'] == 'fiction', "Unexpected book type returned"
 
+    @pytest.mark.tags("regression")
     def test_get_list_of_books_with_valid_limit(self):
         response = get_list_of_books(limit_size=2)
 
@@ -39,6 +42,7 @@ class TestGetListOfBooks(unittest.TestCase):
         response_body = response.json()
         assert len(response_body) == 2, "Unexpected number of results"
 
+    @pytest.mark.tags("regression")
     def test_get_list_of_books_filter_by_invalid_type(self):
         response = get_list_of_books(book_type="invalid_type")
 

@@ -1,9 +1,7 @@
-import unittest
-
 from requests_folder.books_api import submit_order
 
 
-class TestSubmitOrder(unittest.TestCase):
+class TestSubmitOrder:
 
     def test_submit_order_valid_book_id(self):
         response = submit_order(1, "PyTa20")

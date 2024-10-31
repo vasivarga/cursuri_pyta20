@@ -41,3 +41,25 @@ def get_order_by_id(order_id):
     }
 
     return requests.get(endpoint, headers=header_params)
+
+def update_order(order_id, new_name):
+    endpoint = f"https://simple-books-api.glitch.me/orders/{order_id}"
+
+    header_params = {
+        "Authorization": token
+    }
+
+    request_body = {
+      "customerName": new_name
+    }
+
+    return requests.patch(endpoint, headers=header_params, json=request_body)
+
+def delete_order(order_id):
+    endpoint = f"https://simple-books-api.glitch.me/orders/{order_id}"
+
+    header_params = {
+        "Authorization": token
+    }
+
+    return requests.delete(endpoint, headers=header_params)
