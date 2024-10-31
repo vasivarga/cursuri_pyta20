@@ -1,0 +1,10 @@
+Librarii de instalat:
+
+pip install requests
+pip install pytest
+pip install pytest-html
+pip install pytest_tagging
+
+Comanda pentru rulat teste:
+
+pytest --tags <tag dorit> --html=<nume_raport>.html
